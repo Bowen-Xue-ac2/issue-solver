@@ -96,7 +96,9 @@ class SkillsCLI(unittest.TestCase):
         binary_dir.mkdir()
         binary = binary_dir / "trivy"
         marker = self.root / "was-executed"
-        binary.write_text(f"#!/bin/sh\ntouch '{marker}'\n", encoding="utf-8")
+        # A shell builtin still records accidental execution when PATH contains
+        # only this fake scanner (an external `touch` would itself be missing).
+        binary.write_text(f"#!/bin/sh\nprintf executed > '{marker}'\n", encoding="utf-8")
         binary.chmod(0o755)
         result = self.run_cli("discover", "--skills-dir", self.skills,
                               "--skills-dir", second, path=binary_dir)

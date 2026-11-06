@@ -1,6 +1,6 @@
 # Issue Solver 0.1 Implementation Plan
 
-> **For agentic workers:** This plan does not grant workflow activation. Execute task-by-task only using the method and stage explicitly authorized by the user. Skill references are dependencies within that scope, not permission to activate a full workflow. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** This plan does not grant workflow activation. Execute task-by-task only using the method and stage explicitly authorized by the user. Skill references are dependencies within that scope, not permission to activate a full workflow. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Deliver the approved lightweight repair and authorized security workbench.
 
@@ -39,11 +39,11 @@ self-contained entry to `DIR/issue-solver`, refusing existing targets.
 entrypoints, optional modules, and a Trivy PATH availability observation.
 No helper command runs tools, installs dependencies, or reads project logs.
 
-- [ ] Write installation/discovery behavioral tests; run and observe missing CLI failure.
-- [ ] Observe a no-skill reference retrieval baseline before writing the entrypoint.
-- [ ] Implement copy/discovery and self-contained guidance; pin verified sources.
-- [ ] Run `python3 -m unittest discover -s tests -v`; expected all tests pass.
-- [ ] Commit the portable workbench and evidence-backed usage instructions.
+- [x] Write installation/discovery behavioral tests; run and observe missing CLI failure.
+- [x] Observe a no-skill reference retrieval baseline before writing the entrypoint.
+- [x] Implement copy/discovery and self-contained guidance; pin verified sources.
+- [x] Run `python3 -m unittest discover -s tests -v`; expected all tests pass.
+- [x] Commit the portable workbench and evidence-backed usage instructions.
 
 ### Task 2: Five-case forward acceptance and delivery
 
@@ -54,12 +54,12 @@ executes local fixture behavior for `bug`, `ci`, `security`, `false-positive`.
 The missing-tool case consumes the real discovery command with an empty PATH.
 Fixtures live only in a temporary copy during repair.
 
-- [ ] Add runnable exercises with independent assertions; observe three expected
+- [x] Add runnable exercises with independent assertions; observe three expected
       pre-fix failures and one already-safe case.
-- [ ] Install to a temporary skill root and run one independent consuming-agent
+- [x] Install to a temporary skill root and run one independent consuming-agent
       forward test across all five cases; combine this with whole-branch review.
-- [ ] Repair only demonstrated acceptance defects; verify affected behavior.
-- [ ] Record concise sanitized validation, commit, and hand the verified branch
+- [x] Repair only demonstrated acceptance defects; verify affected behavior.
+- [x] Record concise sanitized validation, commit, and hand the verified branch
       to the parent for the already-authorized push; do not merge.
 
 ## Execution notes
