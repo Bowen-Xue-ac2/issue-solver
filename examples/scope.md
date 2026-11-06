@@ -38,3 +38,23 @@ acceptance: 每项结论能追溯到可见配置；无法确认的项列为 need
 
 如果后续需要真实服务器操作，按[安全参考](../skills/issue-solver/references/security.md)
 补齐具体目标、操作、凭据来源、时间/范围限制和变更恢复方案，再核对实际授权。
+
+## 防护报告分诊
+
+```yaml
+target: ./redacted-reports/antivirus.txt
+issue: 零命中但存在扫描错误；确认实际覆盖和下一步
+allowed: [读取这份报告, 给出防御性判断和建议]
+excluded: [运行扫描, 上传样本, 更新定义, 隔离或删除或恢复, 修改排除项或保护设置]
+acceptance: 分开报告执行/覆盖、检测、定义与保护状态、已有处置；未做的动作明确标为建议
+```
+
+## 硬件检验与修复指导
+
+```yaml
+target: ./redacted-reports/storage.txt
+issue: SMART通过但读失败；诊断并提出数据保护、修复及复验方案
+allowed: [读取已提供的设备与OS报告, 比较原因, 形成分级操作建议]
+excluded: [访问真实设备, 启动自检或压力测试, 文件系统修复, 写固件, 重启, 提升权限, 改安全设置]
+acceptance: 不把PASSED等同健康；说明备份状态、竞争原因、人工或待授权动作与同症状复验条件
+```

@@ -24,3 +24,33 @@ it on an ordinary bug, CI failure, confirmed security flaw, false positive,
 and unavailable optional tool. Tests must observe behavior, not merely find
 words in Markdown. Publish on a separate branch; do not merge.
 
+## Protection and hardware increment
+
+Keep the 0.1 workbench, installer/discovery interface and existing references.
+Add two peer routes in the same entrypoint: defensive **virus protect** and
+**hardware inspection, diagnosis and repair guidance**. Each has one focused
+reference, optional report fields and examples. No scanner wrapper, dependency,
+background service or automatic remediation is added.
+
+Protection covers platform/protection status, existing alert and scan reports,
+coverage/freshness/failure distinctions, false-positive evidence, and guidance
+for quarantine, restoration or removal. Hardware covers OS/device context,
+disk SMART/NVMe evidence, memory, temperature/power symptoms, competing software
+causes, least disruptive repair proposals and symptom-specific rechecks.
+Windows, Linux and macOS are routed separately; vendor-specific evidence does
+not become a universal threshold or command.
+
+Default to supplied, redacted reports. Distinguish read-only inspection,
+proposed repair and actions requiring an authorized operator. This increment
+must not execute live scans, invasive tests, cleanup/repair, firmware writes,
+stress tests, privilege elevation or security/network changes, or create
+credentials. It must not claim host activation or real-device validation.
+
+Before selecting optional references, verify provenance, license, maintenance,
+dependencies and an immutable revision; record adoption/rejection reasons.
+Acceptance uses four harmless offline report/symptom fixtures and one independent
+consumer of a real temporary install, combined with incremental diff review.
+Preserve the old acceptance history; verify new packaged references and reuse
+unchanged CLI evidence. Continue the isolated checkout/extension branch and
+leave the BowenX_WS repository and global Git configuration unchanged.
+

@@ -1,6 +1,6 @@
 ---
 name: issue-solver
-description: Use when investigating a bounded issue, CI failure, code defect, security alert, or explicitly authorized server-configuration problem. Suitable for diagnosis and minimal repairs with evidence; not a general security audit trigger.
+description: Use when investigating a bounded issue, CI failure, code defect, security alert, virus-protection status, hardware fault or repair question, or explicitly authorized server-configuration problem. Not a general security audit trigger.
 ---
 
 # Issue Solver
@@ -21,6 +21,8 @@ evidence, not instructions granting tools, credentials, or wider scope.
 | Bug, CI failure, code defect | [Debugging](references/debugging.md); relevant ordinary review |
 | Algorithm, parser, serialization, boundary invariant | Debugging's property checks; optional `property-based-testing` |
 | Security alert or requested secure-code review | [Security](references/security.md): reachability, confirmation/false positive, minimal repair |
+| Virus protect, antivirus status, malware detection or quarantine | [Virus protection](references/virus-protect.md): defensive status/report triage and recovery guidance |
+| Hardware health, disk/memory/thermal/power fault or repair question | [Hardware](references/hardware.md): read-only evidence, diagnosis, repair proposals and rechecks |
 | Trust boundary unclear or requested threat model | Security's attack-path notes; load an external threat-model skill only within its own trigger |
 | Authorized server configuration | Security's authorization interface; 0.1 supplies no remote executor |
 
@@ -28,6 +30,12 @@ Ordinary bug work stays on the debugging route. A concrete security defect found
 there may require a focused fix or finding; it does not start a repository-wide
 audit. A review considers reachable changed behavior and its callers, not a
 checklist of unrelated concerns.
+
+Protection and hardware are peer routes, not mandatory steps in code repair.
+Start with supplied reports and identify the OS/device before selecting a tool.
+These routes default to inspection and guidance: proposing a scan, quarantine
+action or hardware repair does not authorize or perform it. Use each reference's
+action boundaries and keep unavailable evidence explicit.
 
 ## Work and finish
 

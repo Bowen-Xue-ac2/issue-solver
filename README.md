@@ -1,8 +1,10 @@
-# issue-solver · 0.1
+# issue-solver · 0.1 + 防护与硬件基础扩展
 
 轻量的代码修复与授权安全维护工作台。统一入口处理 issue、CI 失败、代码缺陷、
 安全告警和有明确授权的服务器配置问题：**范围与路由 → 证据与复现 → 最小修复
 → 针对性验证 → 交付**。普通 bug 走调试路线；安全模块按具体问题启用。
+现并列增加病毒防护（virus protect）及硬件检验、故障诊断与修复指导，
+默认分析已有报告并提供建议，区分只读检验、建议和需人工/额外授权的动作。
 
 入口是 [issue-solver/SKILL.md](skills/issue-solver/SKILL.md)。内置调试、性质检查、
 常规 review、安全确认/误报、验收参考和报告模板；可复用已安装的专门技能。
@@ -56,11 +58,21 @@ Trivy 的 `found-on-path` 仅表示 PATH 上有可执行文件；`unavailable` �
 | “扫描器把参数化查询报成注入” | 检查绑定与可达性；有证据则报告误报，不制造改动 |
 | “Trivy 不存在，先完成能做的检查” | 标明扫描未执行；继续有证据的人工/本地检查 |
 | “审查这份服务器配置” | 可先分析提供的脱敏文件；实际连接/扫描/变更须有具体目标和操作授权 |
+| “病毒扫描零命中，但有错误且定义过期” | 防护路线：分别判断执行、覆盖、检测与实时防护状态；不能报 clean |
+| “被隔离的签名程序是误报吗，能恢复吗” | 核对来源、检测及处置证据；恢复/排除只是待授权建议 |
+| “SMART PASSED，但磁盘读失败” | 硬件路线：结合错误/历史和备份状态；区分介质、链路等原因，再给修复及复验建议 |
+| “电脑重启，是内存、电源、过热还是驱动” | 按平台整理症状和竞争假设；先收集能区分原因的证据，不自动压力测试 |
 
 授权接口、可选 Trivy 和 Lynis 边界见 [安全参考](skills/issue-solver/references/security.md)。
 可直接复制 [任务范围示例](examples/scope.md)，分别用于本地修复和只读脱敏配置审查。
 0.1 没有远端执行器，未扫描任何真实服务器。运行记录不要提交；目标项目使用
 `.issue-solver/` 前要确认它已被忽略。报告可按 [模板](skills/issue-solver/assets/report.md) 精简填写。
+
+[病毒防护](skills/issue-solver/references/virus-protect.md) 只用于防御，
+[硬件参考](skills/issue-solver/references/hardware.md) 区分 Windows/Linux/macOS
+证据及操作边界。本轮不执行真实扫描、清除/修复、固件写入、压力测试、权限提升、
+安全/网络设置更改或凭据创建；没有新增扫描器、常驻服务或自动修复执行器。
+安装/发现 helper 接口不变，也不新增防病毒或硬件工具探测。
 
 ## 验证与来源
 
@@ -71,6 +83,8 @@ python3 -m unittest discover -s tests -v
 这验证离线安装、保留已有目录、多目录发现以及工具缺失/不执行工具的行为。
 [五类 forward 演练](examples/acceptance/README.md) 验证消费者实际使用技能；
 [验收记录](docs/validation.md) 区分已经运行的检查和未验证的宿主/真实扫描。
+[四类增量离线演练](examples/protection-hardware/README.md) 使用无害合成报告；
+[增量验收记录](docs/validation-protection-hardware.md) 单独记录新路线的实际验证。
 
 [来源表](skills/issue-solver/references/sources.md) 列出所选上游技能的真实路径、
 不可变 commit 和许可；仅引用，不 vendor，不强制安装。原仓库未指定整体开源
