@@ -58,6 +58,7 @@ Trivy 的 `found-on-path` 仅表示 PATH 上有可执行文件；`unavailable` �
 | “审查这份服务器配置” | 可先分析提供的脱敏文件；实际连接/扫描/变更须有具体目标和操作授权 |
 
 授权接口、可选 Trivy 和 Lynis 边界见 [安全参考](skills/issue-solver/references/security.md)。
+可直接复制 [任务范围示例](examples/scope.md)，分别用于本地修复和只读脱敏配置审查。
 0.1 没有远端执行器，未扫描任何真实服务器。运行记录不要提交；目标项目使用
 `.issue-solver/` 前要确认它已被忽略。报告可按 [模板](skills/issue-solver/assets/report.md) 精简填写。
 
