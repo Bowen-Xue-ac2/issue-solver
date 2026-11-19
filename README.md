@@ -1,4 +1,4 @@
-# issue-solver · 0.1 + 防护与硬件基础扩展
+# issue-solver · 0.1 + 防护与硬件基础扩展 😊 🤝
 
 轻量的代码修复与授权安全维护工作台。统一入口处理 issue、CI 失败、代码缺陷、
 安全告警和有明确授权的服务器配置问题：**范围与路由 → 证据与复现 → 最小修复
@@ -10,6 +10,8 @@
 常规 review、安全确认/误报、验收参考和报告模板；可复用已安装的专门技能。
 不需要数据库、队列、常驻服务或网络安装。唯一 helper 只做本地复制和发现，
 不执行 issue、扫描器或远端命令。
+
+[技能入口](skills/issue-solver/SKILL.md) · [快速上手](#安装与发现) · [使用范围](#使用范围) · [离线验证](#验证与来源) · [贡献与 DCO](#贡献与-dco)
 
 ## 安装与发现
 
@@ -89,3 +91,7 @@ python3 -m unittest discover -s tests -v
 [来源表](skills/issue-solver/references/sources.md) 列出所选上游技能的真实路径、
 不可变 commit 和许可；仅引用，不 vendor，不强制安装。原仓库未指定整体开源
 许可，0.1 不把上游许可自动套用到本仓库原创内容。
+
+## 贡献与 DCO
+
+请阅读 [Developer Certificate of Origin 1.1](DCO)。能作出该声明时，为自己的每次提交使用 `git commit --signoff -m "Describe the change"`。签署信息会进入公开提交记录。请使用自己的 Git 身份，不代签；DCO 签署不是加密签名，也不改变项目许可。
